@@ -113,14 +113,20 @@
       botReply.classList.add("chatbot");
 
       // Simulated response
-      const replies = [
-        "Thank you for sharing that. You're not alone.",
-        "Would you like support with something specific?",
-        "I hear you. That makes a lot of sense.",
-        "It's okay to feel how you're feeling.",
-        "You’re doing really well — even if it doesn’t feel like it."
-      ];
-      const reply = replies[Math.floor(Math.random() * replies.length)];
+const replies = [
+  "Providing clear, predictable structure and routine is often one of the most powerful accommodations you can offer.",
+  "Autistic people thrive when communication is direct, respectful, and written down where possible.",
+  "Sensory-friendly environments (like quiet spaces, dim lighting, or noise-cancelling options) can make a huge difference in comfort and productivity.",
+  "Instead of focusing on what's 'wrong,' focus on what strengths the Autistic employee brings — like focus, creativity, honesty, or pattern recognition.",
+  "Don't assume — ask. Each Autistic person has different needs and preferences. Listening is the most neuroaffirming thing you can do.",
+  "Consider offering alternatives to traditional interviews — some Autistic candidates communicate best in writing or practical tasks.",
+  "Being flexible with work hours, breaks, or remote options can support wellbeing and improve retention.",
+  "Training your whole team in neurodiversity awareness helps build a culture of inclusion and understanding.",
+  "Feedback works best when it's gentle, specific, and delivered calmly — and when there's also time to process it.",
+  "When in doubt, ask what support is helpful. Autistic voices are the best guide."
+];
+
+     const reply = replies[Math.floor(Math.random() * replies.length)];
 
       setTimeout(() => {
         botReply.innerHTML = `<strong>Bot:</strong> ${reply}`;
