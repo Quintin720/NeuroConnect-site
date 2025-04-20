@@ -82,9 +82,9 @@
 
   <main class="main">
     <section class="chatbox">
-      <h2>NeuroConnect Support Bot (Free)</h2>
+      <h2>NeuroConnect Support Bot (For Employers & Educators)</h2>
       <div class="chatlog" id="chatlog">
-        <p class="chatbot"><strong>Bot:</strong> Hi there! I'm here to support you. How can I help today?</p>
+        <p class="chatbot"><strong>Bot:</strong> Hi there! I'm here to help you support Autistic people more effectively. Ask me anything.</p>
       </div>
       <div class="chat-input">
         <input type="text" id="userInput" placeholder="Type your message..." />
@@ -112,21 +112,20 @@
       const botReply = document.createElement("p");
       botReply.classList.add("chatbot");
 
-      // Simulated response
-const replies = [
-  "Providing clear, predictable structure and routine is often one of the most powerful accommodations you can offer.",
-  "Autistic people thrive when communication is direct, respectful, and written down where possible.",
-  "Sensory-friendly environments (like quiet spaces, dim lighting, or noise-cancelling options) can make a huge difference in comfort and productivity.",
-  "Instead of focusing on what's 'wrong,' focus on what strengths the Autistic employee brings — like focus, creativity, honesty, or pattern recognition.",
-  "Don't assume — ask. Each Autistic person has different needs and preferences. Listening is the most neuroaffirming thing you can do.",
-  "Consider offering alternatives to traditional interviews — some Autistic candidates communicate best in writing or practical tasks.",
-  "Being flexible with work hours, breaks, or remote options can support wellbeing and improve retention.",
-  "Training your whole team in neurodiversity awareness helps build a culture of inclusion and understanding.",
-  "Feedback works best when it's gentle, specific, and delivered calmly — and when there's also time to process it.",
-  "When in doubt, ask what support is helpful. Autistic voices are the best guide."
-];
+      const replies = [
+        "Providing clear, predictable structure and routine is one of the most powerful accommodations.",
+        "Autistic people thrive when communication is direct, respectful, and written down where possible.",
+        "Sensory-friendly environments can improve comfort and productivity — consider lighting, noise, and space.",
+        "Don't assume — ask. Every Autistic person has unique strengths and support needs.",
+        "Alternative interview formats (like written responses or practical tasks) can help uncover true potential.",
+        "Positive feedback and processing time improve confidence and clarity.",
+        "Flexible schedules, remote work, and clear expectations support long-term success.",
+        "Ongoing neurodiversity training helps foster an inclusive culture for everyone.",
+        "Start by listening. The best support begins with understanding the person, not assumptions.",
+        "Supporting Autistic people well also benefits your entire workplace or classroom."
+      ];
 
-     const reply = replies[Math.floor(Math.random() * replies.length)];
+      const reply = replies[Math.floor(Math.random() * replies.length)];
 
       setTimeout(() => {
         botReply.innerHTML = `<strong>Bot:</strong> ${reply}`;
@@ -139,4 +138,3 @@ const replies = [
   </script>
 </body>
 </html>
-
