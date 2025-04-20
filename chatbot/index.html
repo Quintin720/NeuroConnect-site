@@ -15,7 +15,6 @@
       margin: 40px auto;
       box-shadow: 0 4px 12px rgba(0,0,0,0.06);
     }
-
     .chatlog {
       height: 300px;
       overflow-y: auto;
@@ -25,33 +24,27 @@
       margin-bottom: 12px;
       border: 1px solid #ccc;
     }
-
     .chatlog p {
       margin: 0 0 10px;
     }
-
     .chatuser {
       font-weight: bold;
       color: #5c3d99;
     }
-
     .chatbot {
       font-style: italic;
       color: #444;
     }
-
     .chat-input {
       display: flex;
       gap: 10px;
     }
-
     .chat-input input {
       flex-grow: 1;
       padding: 10px;
       border-radius: 8px;
       border: 1px solid #ccc;
     }
-
     .chat-input button {
       padding: 10px 16px;
       background: #f2c94c;
@@ -60,7 +53,6 @@
       cursor: pointer;
       font-weight: bold;
     }
-
     .chat-input button:hover {
       background: #ffe299;
     }
@@ -82,7 +74,7 @@
 
   <main class="main">
     <section class="chatbox">
-      <h2>NeuroConnect Support (For Employers & Educators)</h2>
+      <h2>NeuroConnect Support Bot (For Employers & Educators)</h2>
       <div class="chatlog" id="chatlog">
         <p class="chatbot"><strong>Bot:</strong> Hi there! I'm here to help you support Autistic people more effectively. Ask me anything.</p>
       </div>
@@ -101,31 +93,36 @@
     function sendMessage() {
       const userInput = document.getElementById("userInput");
       const chatlog = document.getElementById("chatlog");
-      const message = userInput.value.trim();
+      const message = userInput.value.trim().toLowerCase();
 
       if (message === "") return;
 
       const userMsg = document.createElement("p");
-      userMsg.innerHTML = `<span class="chatuser">You:</span> ${message}`;
+      userMsg.innerHTML = `<span class="chatuser">You:</span> ${userInput.value}`;
       chatlog.appendChild(userMsg);
 
       const botReply = document.createElement("p");
       botReply.classList.add("chatbot");
 
-      const replies = [
-        "Providing clear, predictable structure and routine is one of the most powerful accommodations.",
-        "Autistic people thrive when communication is direct, respectful, and written down where possible.",
-        "Sensory-friendly environments can improve comfort and productivity — consider lighting, noise, and space.",
-        "Don't assume — ask. Every Autistic person has unique strengths and support needs.",
-        "Alternative interview formats (like written responses or practical tasks) can help uncover true potential.",
-        "Positive feedback and processing time improve confidence and clarity.",
-        "Flexible schedules, remote work, and clear expectations support long-term success.",
-        "Ongoing training helps foster an inclusive culture for everyone.",
-        "Start by listening. The best support begins with understanding the person.",
-        "Supporting Autistic people well also benefits your entire workplace or classroom."
-      ];
+      let reply = "That's a great question. Can you tell me a bit more so I can give you a better answer?";
 
-      const reply = replies[Math.floor(Math.random() * replies.length)];
+      if (message.includes("interview")) {
+        reply = "Consider offering alternatives to traditional interviews — some Autistic candidates do better with written questions or practical tasks.";
+      } else if (message.includes("communication")) {
+        reply = "Clear, direct, and written communication can help reduce anxiety and improve clarity for Autistic team members.";
+      } else if (message.includes("sensory")) {
+        reply = "Creating a sensory-friendly workspace — like quiet zones, natural lighting, or noise-cancelling headphones — can reduce overwhelm and boost focus.";
+      } else if (message.includes("feedback")) {
+        reply = "Gentle, specific feedback delivered calmly works best. Give time for processing and avoid rushing.";
+      } else if (message.includes("flexibility") || message.includes("remote")) {
+        reply = "Flexible hours, hybrid work, and break options can really help Autistic employees manage energy and stress.";
+      } else if (message.includes("accommodation")) {
+        reply = "Accommodations might include written instructions, regular check-ins, reduced sensory input, or alternative communication styles.";
+      } else if (message.includes("misunderstood") || message.includes("problem")) {
+        reply = "Misunderstandings often stem from communication differences. Slow down, clarify, and validate the person’s intent.";
+      } else if (message.includes("how to support") || message.includes("best way")) {
+        reply = "The best support is to ask what works for *that* person. Every Autistic person is different. Listen and adapt together.";
+      }
 
       setTimeout(() => {
         botReply.innerHTML = `<strong>Bot:</strong> ${reply}`;
