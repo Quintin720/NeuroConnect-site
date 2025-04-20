@@ -1,3 +1,4 @@
+/* Base styling */
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
@@ -7,15 +8,16 @@ body {
 }
 
 a {
-  color: #cc7a00;
+  color: #d284f5;
   text-decoration: none;
 }
 a:hover {
   text-decoration: underline;
 }
 
+/* Header with soft rainbow background */
 .header {
-  background: linear-gradient(to right, #ffe6a7, #ffeac1);
+  background: linear-gradient(90deg, #ffadad, #ffd6a5, #fdffb6, #caffbf, #a0c4ff, #bdb2ff, #ffc6ff);
   text-align: center;
   padding: 40px 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
@@ -30,9 +32,10 @@ a:hover {
 .tagline {
   font-size: 1.1rem;
   margin: 10px 0 20px;
-  color: #555;
+  color: #222;
 }
 
+/* Navigation */
 .nav {
   margin-top: 10px;
 }
@@ -43,12 +46,14 @@ a:hover {
   padding: 6px 12px;
   border-radius: 10px;
   transition: background 0.3s;
+  color: #5c3d99;
 }
 
 .nav a:hover {
-  background: #fff2cc;
+  background: #ffe3ff;
 }
 
+/* Main content */
 .main {
   padding: 40px 20px;
   max-width: 900px;
@@ -57,17 +62,19 @@ a:hover {
 
 .hero,
 .about {
-  background: #fefae0;
+  background: #f0f9ff;
   padding: 30px;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
   margin-bottom: 40px;
+  border-left: 6px solid #bdb2ff;
 }
 
 h1, h2 {
   color: #333;
 }
 
+/* Button */
 .button {
   display: inline-block;
   background-color: #f2c94c;
@@ -81,14 +88,16 @@ h1, h2 {
 }
 
 .button:hover {
-  background-color: #ffdd55;
+  background-color: #ffe299;
 }
 
+/* Footer */
 .footer {
   text-align: center;
   padding: 20px;
-  background: #f9f9f9;
+  background: #fef6ff;
   font-size: 0.9rem;
-  color: #888;
+  color: #777;
   margin-top: 60px;
+  border-top: 2px solid #ffc6ff;
 }
