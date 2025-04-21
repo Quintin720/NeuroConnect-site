@@ -3,8 +3,12 @@ const neroResponses = [
     keywords: ["sensory", "sensory-friendly", "noise", "lighting", "stim", "overwhelm"],
     response: "Creating a sensory-friendly workspace — like quiet zones, natural lighting, or noise-cancelling headphones — can reduce overwhelm and boost focus."
   },
+{
+  keywords: ["autism", "what is autism", "explain autism"],
+  response: "Autism is a neurodevelopmental difference that can impact how a person experiences and interacts with the world. It can influence communication, social interaction, sensory processing, and thinking styles. It’s not a disorder to be fixed, but a different way of being with both strengths and challenges."
+},
   {
-    keywords: ["autistic strengths", "autistic skills", "strengths of autistic"],
+    keywords: ["autism", "autistic strengths", "autistic skills", "strengths of autistic"],
     response: "Autistic people often bring deep focus, honesty, creativity, strong pattern recognition, and innovative thinking. Many excel in fields like data analysis, design, writing, technology, and care roles. Their strengths flourish when supported and understood."
   },
   {
