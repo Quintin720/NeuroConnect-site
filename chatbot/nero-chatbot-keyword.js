@@ -1,7 +1,7 @@
 
 const neroResponses = [
   {
-    keywords: ["explain autism", "what is autism", "autism in simple terms"],
+    keywords: ["autism", "explain autism", "what is autism", "autism in simple terms"],
     response: "Autism is a neurodevelopmental difference that can impact how a person experiences and interacts with the world. It can influence communication, social interaction, sensory processing, and thinking styles. It’s not a disorder to be fixed, but a different way of being with both strengths and challenges."
   },
   {
@@ -9,7 +9,7 @@ const neroResponses = [
     response: "Autistic people often bring deep focus, honesty, creativity, strong pattern recognition, and innovative thinking. Many excel in fields like data analysis, design, writing, technology, and care roles. Their strengths flourish when supported and understood."
   },
   {
-    keywords: ["sensory support", "sensory-friendly", "sensory adjustments"],
+    keywords: ["sensory", "sensory support", "sensory-friendly", "sensory adjustments"],
     response: "These might include quiet workspaces, dimmable lights, headphones, freedom to move, and scent-free zones. Ask the Autistic person what works best for them."
   },
   {
@@ -31,7 +31,7 @@ function findNeroResponse(input) {
   input = input.toLowerCase();
   for (const item of neroResponses) {
     for (const keyword of item.keywords) {
-      if (input.includes(keyword)) {
+      if (input.includes(sensory)) {
         return item.response;
       }
     }
