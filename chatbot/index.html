@@ -38,6 +38,33 @@
     .nero {
       font-style: italic;
       color: #444;
+      display: flex;
+      align-items: center;
+    }
+
+    .nero-avatar {
+      width: 24px;
+      height: 24px;
+      background-color: #bdb2ff;
+      color: white;
+      font-weight: bold;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 8px;
+      font-size: 14px;
+    }
+
+    .typing-dots {
+      display: inline-block;
+      width: 1em;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 0.2; }
+      50% { opacity: 1; }
     }
 
     .chat-input {
@@ -84,7 +111,7 @@
     <section class="chatbox">
       <h2>NeuroConnect Support (For Employers & Educators)</h2>
       <div class="chatlog" id="chatlog">
-        <p class="nero"><strong>Nero:</strong> Hi there! I'm here to help you support Autistic people more effectively. Ask me anything.</p>
+        <p class="nero"><span class="nero-avatar">N</span><strong>Nero:</strong> Hi there! I'm here to help you support Autistic people more effectively. Ask me anything.</p>
       </div>
       <div class="chat-input">
         <input type="text" id="userInput" placeholder="Type your message..." />
@@ -109,8 +136,11 @@
       userMsg.innerHTML = `<span class="chatuser">You:</span> ${userInput.value}`;
       chatlog.appendChild(userMsg);
 
-      const neroReply = document.createElement("p");
-      neroReply.classList.add("nero");
+      const typing = document.createElement("p");
+      typing.classList.add("nero");
+      typing.innerHTML = `<span class="nero-avatar">N</span><strong>Nero:</strong> <span class="typing-dots">...</span>`;
+      chatlog.appendChild(typing);
+      chatlog.scrollTop = chatlog.scrollHeight;
 
       let reply = "That’s a great question. Can you tell me a bit more so I can give you a better answer?";
 
@@ -133,10 +163,13 @@
       }
 
       setTimeout(() => {
-        neroReply.innerHTML = `<strong>Nero:</strong> ${reply}`;
+        typing.remove();
+        const neroReply = document.createElement("p");
+        neroReply.classList.add("nero");
+        neroReply.innerHTML = `<span class="nero-avatar">N</span><strong>Nero:</strong> ${reply}`;
         chatlog.appendChild(neroReply);
         chatlog.scrollTop = chatlog.scrollHeight;
-      }, 600);
+      }, 1200);
 
       userInput.value = "";
     }
