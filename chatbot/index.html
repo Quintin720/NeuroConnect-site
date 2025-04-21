@@ -138,7 +138,7 @@
         typing.remove();
         const neroReply = document.createElement("p");
         neroReply.classList.add("nero");
-        const reply = neroResponses[message] || "I'm still learning. That's a great question — and it may be something I can add soon.";
+        const reply = findNeroResponse(message);
         neroReply.innerHTML = `<span class="nero-avatar">N</span><strong>Nero:</strong> ${reply}`;
         chatlog.appendChild(neroReply);
         chatlog.scrollTop = chatlog.scrollHeight;
