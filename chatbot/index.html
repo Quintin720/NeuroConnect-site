@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,18 +7,23 @@
   <title>NeuroConnect Chatbot</title>
   <link rel="stylesheet" href="../style.css" />
   <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5fa;
+    }
     .chatbox {
       background: #fff;
       border: 2px solid #bdb2ff;
       border-radius: 16px;
       padding: 20px;
-      max-width: 600px;
+      max-width: 700px;
       margin: 40px auto;
       box-shadow: 0 4px 12px rgba(0,0,0,0.06);
     }
-
     .chatlog {
-      height: 300px;
+      height: 320px;
       overflow-y: auto;
       padding: 10px;
       background: #f9f9ff;
@@ -25,23 +31,19 @@
       margin-bottom: 12px;
       border: 1px solid #ccc;
     }
-
     .chatlog p {
       margin: 0 0 10px;
     }
-
     .chatuser {
       font-weight: bold;
       color: #5c3d99;
     }
-
     .nero {
       font-style: italic;
       color: #444;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
     }
-
     .nero-avatar {
       width: 24px;
       height: 24px;
@@ -54,31 +56,27 @@
       justify-content: center;
       margin-right: 8px;
       font-size: 14px;
+      flex-shrink: 0;
     }
-
     .typing-dots {
       display: inline-block;
       width: 1em;
       animation: blink 1s infinite;
     }
-
     @keyframes blink {
       0%, 100% { opacity: 0.2; }
       50% { opacity: 1; }
     }
-
     .chat-input {
       display: flex;
       gap: 10px;
     }
-
     .chat-input input {
       flex-grow: 1;
       padding: 10px;
       border-radius: 8px;
       border: 1px solid #ccc;
     }
-
     .chat-input button {
       padding: 10px 16px;
       background: #f2c94c;
@@ -87,53 +85,47 @@
       cursor: pointer;
       font-weight: bold;
     }
-
     .chat-input button:hover {
       background: #ffe299;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #666;
     }
   </style>
 </head>
 <body>
-  <header class="header">
-    <img src="../images/logo.png" alt="NeuroConnect Logo" class="logo" />
-    <h1>Chatbot</h1>
-    <p class="tagline">Support and Guidance From an Entirely Autistic and Neuroaffirmative Perspective</p>
-    <nav class="nav">
-      <a href="../index.html">Home</a>
-      <a href="../mystory.html">My Story</a>
-      <a href="../blog/index.html">Blog</a>
-      <a href="../courses/index.html">Training</a>
-      <a href="../contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <main class="main">
+  <main>
     <section class="chatbox">
-      <h2>NeuroConnect Support (For Employers & Educators)</h2>
+      <h2>Nero – Your Neuroaffirmative Support Bot</h2>
+      <p><em>Support and guidance from an entirely Autistic and neuroaffirmative perspective.</em></p>
       <div class="chatlog" id="chatlog">
-        <p class="nero"><span class="nero-avatar">N</span><strong>Nero:</strong> Hi there! I'm here to help you support Autistic people more effectively. Ask me anything.</p>
+        <p class="nero"><span class="nero-avatar">N</span><strong>Nero:</strong> Hello! Ask me anything about how to better support Autistic people in the workplace.</p>
       </div>
       <div class="chat-input">
-        <input type="text" id="userInput" placeholder="Type your message..." />
+        <input type="text" id="userInput" placeholder="Type your question exactly as shown in the guide..." />
         <button onclick="sendMessage()">Send</button>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <p>&copy; 2025 NeuroConnect. All rights reserved.</p>
+  <footer>
+    NeuroConnect provides neuroaffirmative support and guidance. We do not offer medical advice. Always seek support from qualified professionals for medical or mental health concerns.
   </footer>
 
+  <script src="nero-chatbot-map.js"></script>
   <script>
     function sendMessage() {
       const userInput = document.getElementById("userInput");
       const chatlog = document.getElementById("chatlog");
-      const message = userInput.value.trim().toLowerCase();
+      const message = userInput.value.trim();
 
       if (message === "") return;
 
       const userMsg = document.createElement("p");
-      userMsg.innerHTML = `<span class="chatuser">You:</span> ${userInput.value}`;
+      userMsg.innerHTML = `<span class="chatuser">You:</span> ${message}`;
       chatlog.appendChild(userMsg);
 
       const typing = document.createElement("p");
@@ -142,34 +134,15 @@
       chatlog.appendChild(typing);
       chatlog.scrollTop = chatlog.scrollHeight;
 
-      let reply = "That’s a great question. Can you tell me a bit more so I can give you a better answer?";
-
-      if (message.includes("interview")) {
-        reply = "Consider offering alternatives to traditional interviews — some Autistic candidates do better with written questions or practical tasks.";
-      } else if (message.includes("communication")) {
-        reply = "Clear, direct, and written communication can help reduce anxiety and improve clarity for Autistic team members.";
-      } else if (message.includes("sensory")) {
-        reply = "Creating a sensory-friendly workspace — like quiet zones, natural lighting, or noise-cancelling headphones — can reduce overwhelm and boost focus.";
-      } else if (message.includes("feedback")) {
-        reply = "Gentle, specific feedback delivered calmly works best. Give time for processing and avoid rushing.";
-      } else if (message.includes("flexibility") || message.includes("remote")) {
-        reply = "Flexible hours, hybrid work, and break options can really help Autistic employees manage energy and stress.";
-      } else if (message.includes("accommodation")) {
-        reply = "Accommodations might include written instructions, regular check-ins, reduced sensory input, or alternative communication styles.";
-      } else if (message.includes("misunderstood") || message.includes("problem")) {
-        reply = "Misunderstandings often stem from communication differences. Slow down, clarify, and validate the person’s intent.";
-      } else if (message.includes("how to support") || message.includes("best way")) {
-        reply = "The best support is to ask what works for *that* person. Every Autistic person is different. Listen and adapt together.";
-      }
-
       setTimeout(() => {
         typing.remove();
         const neroReply = document.createElement("p");
         neroReply.classList.add("nero");
+        const reply = neroResponses[message] || "I'm still learning. That's a great question — and it may be something I can add soon.";
         neroReply.innerHTML = `<span class="nero-avatar">N</span><strong>Nero:</strong> ${reply}`;
         chatlog.appendChild(neroReply);
         chatlog.scrollTop = chatlog.scrollHeight;
-      }, 1200);
+      }, 1000);
 
       userInput.value = "";
     }
