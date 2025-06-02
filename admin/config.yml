@@ -3,15 +3,15 @@ backend:
   repo: Quintin720/NeuroConnect-site
   branch: main
 
-media_folder: "images/uploads" # Where uploaded images will be stored
-public_folder: "/images/uploads" # URL path for uploaded images
+media_folder: "images/uploads" # Where uploaded images will be stored in the repo
+public_folder: "/images/uploads" # URL path for uploaded images on the site
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "blog"
-    create: true
-    slug: "{{day}}-{{month}}-{{year}}-{{slug}}"
+  - name: "blog" # Used in the filename
+    label: "Blog" # Shown in the CMS UI
+    folder: "blog/posts" # Folder where blog posts will be stored
+    create: true # Allow users to create new blog posts
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # URL pattern for blog posts
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
