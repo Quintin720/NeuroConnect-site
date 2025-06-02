@@ -1,25 +1,19 @@
-
 backend:
   name: github
-  repo: Quintin720/NeuroConnect-site  # Replace with your correct GitHub repo name
-  branch: main  # Or your default branch (check your repo if it's main or master)
-  auth_scope: repo
-  base_url: https://api.netlify.com
-  auth_endpoint: auth
-  site_domain: stunning-lebkuchen-a6842a.netlify.app  # or neuroconnect.ie when live
-  client_id: YOUR_CLIENT_ID_HERE
-  client_secret: YOUR_CLIENT_SECRET_HERE
+  repo: Quintin720/NeuroConnect-site
+  branch: main
 
-media_folder: "static/uploads" # Where uploaded images will be stored in your repo
-public_folder: "/uploads" # Path on the site
+media_folder: "images/uploads" # Where uploaded images will be stored
+public_folder: "/images/uploads" # URL path for uploaded images
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "blog"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
+  - name: "blog" # Name of the collection
+    label: "Blog" # Label in CMS UI
+    folder: "blog" # Folder where blog posts are stored
+    create: true # Allow users to create new documents
+    slug: "{{day}}-{{month}}-{{year}}-{{slug}}" # File name template
+    fields: 
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
+
