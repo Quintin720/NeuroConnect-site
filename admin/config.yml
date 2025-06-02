@@ -1,11 +1,9 @@
 backend:
-  name: github
-  repo: Quintin720/NeuroConnect-site
+  name: git-gateway
   branch: main
-  base_url: https://api.github.com
 
-media_folder: "images/uploads" # Where uploaded images will be stored
-public_folder: "/images/uploads" # URL path for uploaded images
+media_folder: "images/uploads" 
+public_folder: "/images/uploads"
 
 collections:
   - name: "blog"
@@ -17,3 +15,4 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
+
