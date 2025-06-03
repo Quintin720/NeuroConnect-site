@@ -118,4 +118,27 @@ a:hover {
   color: #999;
   margin-top: 40px;
 }
+/* Highlight Active Nav Link */
+.nav a {
+  margin: 0 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 10px;
+  transition: background 0.3s, color 0.3s;
+  color: #5c3d99;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  background: #ffe3ff;
+  color: #4b0082;
+}
+
+/* New active link style */
+.nav a.active {
+  background: #bdb2ff;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 10px;
+}
 

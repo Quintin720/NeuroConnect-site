@@ -2,39 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>{{ .Title }}</title>
+  <title>{{ .Title }} | NeuroConnect Blog</title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <header class="header">
-    <img src="/images/logo.png" alt="NeuroConnect Logo" class="logo" />
+    <img src="/images/logo.png" alt="NeuroConnect Logo" class="logo">
     <h1>NeuroConnect Blog</h1>
-    <p class="tagline">Real talk. Lived experience. Shared support.</p>
+    <p>Real talk. Lived experience. Shared support.</p>
+
     <nav class="nav">
-      <a href="/">Home</a>
-      <a href="/my-story">My Story</a>
-      <a href="/training">Training</a>
-      <a href="/chatbot">Chatbot</a>
-      <a href="/contact">Contact</a>
+      <a href="https://neuroconnect.ie" {{ if eq .Site.BaseURL "https://neuroconnect.ie/" }}class="active"{{ end }}>Home</a>
+      <a href="https://neuroconnect.ie/my-story">My Story</a>
+      <a href="https://neuroconnect.ie/training">Training</a>
+      <a href="https://neuroconnect.ie/chatbot">Chatbot</a>
+      <a href="https://neuroconnect.ie/contact">Contact</a>
     </nav>
   </header>
 
   <main class="main">
-    <div class="post">
-      <!-- 🚀 Back to NeuroConnect Button -->
-      <a href="https://neuroconnect.ie" class="button-back">← Back to NeuroConnect</a>
-
-      <!-- Blog Post Title and Date -->
-      <h1>{{ .Title }}</h1>
+    <section class="hero">
+      <h2>{{ .Title }}</h2>
       <p><em>Published: {{ .Date.Format "02-01-2006" }}</em></p>
-
-      <!-- Post Content -->
       {{ .Content }}
-    </div>
+    </section>
   </main>
 
-  <footer class="footer">
+  <footer>
     <p>© {{ now.Year }} NeuroConnect</p>
   </footer>
 </body>
 </html>
+
