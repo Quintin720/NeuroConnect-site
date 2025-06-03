@@ -1,0 +1,31 @@
+baseURL = "https://www.neuroconnect.ie/"
+languageCode = "en-us"
+title = "NeuroConnect Blog"
+theme = "neuroconnect-theme"
+publishDir = "public"
+
+[params]
+    logo = "images/logo.png"
+    tagline = "Real talk. Lived experience. Shared support."
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "My Story"
+    url = "/mystory"
+    weight = 2
+  [[menu.main]]
+    name = "Training"
+    url = "/courses"
+    weight = 3
+  [[menu.main]]
+    name = "Chatbot"
+    url = "/chatbot"
+    weight = 4
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact"
+    weight = 5
