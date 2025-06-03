@@ -11,12 +11,14 @@
     </header>
     
     <main>
-        <h2>Latest Posts</h2>
+        <h2>Latest Blog Posts</h2>
         <ul>
-        {{ range .Pages }}
+        {{ range where .Site.RegularPages "Section" "blog" }}
             <li>
                 <a href="{{ .RelPermalink }}">{{ .Title }}</a> - {{ .Date.Format "Jan 2, 2006" }}
             </li>
+        {{ else }}
+            <p>No blog posts found.</p>
         {{ end }}
         </ul>
     </main>
@@ -26,3 +28,4 @@
     </footer>
 </body>
 </html>
+
