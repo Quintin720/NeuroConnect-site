@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ .Site.Title }}</title>
+</head>
+<body>
+    <header>
+        <h1>{{ .Site.Title }}</h1>
+        <p>{{ .Site.Params.tagline }}</p>
+    </header>
+    
+    <main>
+        <h2>Latest Posts</h2>
+        <ul>
+        {{ range .Pages }}
+            <li>
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a> - {{ .Date.Format "Jan 2, 2006" }}
+            </li>
+        {{ end }}
+        </ul>
+    </main>
+
+    <footer>
+        <p>© {{ now.Year }} NeuroConnect</p>
+    </footer>
+</body>
+</html>
