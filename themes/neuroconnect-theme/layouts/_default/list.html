@@ -2,50 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>{{ .Title }} | NeuroConnect</title>
+  <title>NeuroConnect Blog</title>
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-
-  <!-- Header -->
   <header class="header">
-    <img src="/images/logo.png" alt="NeuroConnect Logo" class="logo">
-    <h1>{{ .Site.Title }}</h1>
+    <img src="/images/logo.png" alt="NeuroConnect Logo" class="logo" />
+    <h1>NeuroConnect Blog</h1>
     <p class="tagline">Real talk. Lived experience. Shared support.</p>
-
-    <!-- Navigation -->
     <nav class="nav">
       <a href="/">Home</a>
-      <a href="/my-story/">My Story</a>
-      <a href="/training/">Training</a>
-      <a href="/chatbot/">Chatbot</a>
-      <a href="/contact/">Contact</a>
+      <a href="/my-story">My Story</a>
+      <a href="/training">Training</a>
+      <a href="/chatbot">Chatbot</a>
+      <a href="/contact">Contact</a>
     </nav>
   </header>
 
-  <!-- Main content -->
   <main class="main">
-    <section class="hero">
+    <div class="post-list">
+      <!-- 🏡 Back to NeuroConnect Button with Icon -->
+      <a href="https://neuroconnect.ie" class="button-back">🏡 Back to NeuroConnect</a>
+
       <h2>📝 Latest Blog Posts</h2>
-      <ul>
-        {{ range .Pages }}
-          <li>
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a> — {{ .Date.Format "Jan 2, 2006" }}
-            {{ if .Params.summary }}
-              <p>{{ .Params.summary }}</p>
-            {{ else }}
-              <p>{{ .Summary }}</p>
-            {{ end }}
-          </li>
-        {{ end }}
-      </ul>
-    </section>
+      {{ range .Pages.ByDate.Reverse }}
+        <div class="post-preview">
+          <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a> — {{ .Date.Format "Jan 2, 2006" }}</h3>
+          <p>{{ .Summary }}</p>
+        </div>
+      {{ end }}
+    </div>
   </main>
 
-  <!-- Footer -->
-  <footer>
-    <p>© {{ now.Format "2006" }} NeuroConnect</p>
+  <footer class="footer">
+    <p>© {{ now.Year }} NeuroConnect</p>
   </footer>
-
 </body>
 </html>
+
+
