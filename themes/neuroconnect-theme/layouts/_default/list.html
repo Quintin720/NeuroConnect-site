@@ -1,46 +1,38 @@
-{{ define "main" }}
-<section style="max-width: 900px; margin: 2rem auto;">
-  <h2 style="font-size: 2rem; text-align: center; margin-bottom: 2rem;">📚 Latest Blog Posts</h2>
-  <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
-    {{ range .Pages }}
-      <div style="background: #fff; padding: 2rem; border-radius: 20px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease;">
-        
-        <!-- Optional Badge or Tag -->
-        {{ with .Params.tags }}
-          <div style="display: inline-block; background-color: #ffe3ff; color: #5c3d99; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.75rem; font-weight: bold; margin-bottom: 1rem;">
-            {{ index . 0 }}
-          </div>
-        {{ else }}
-          <div style="display: inline-block; background-color: #ffebcc; color: #cc6600; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.75rem; font-weight: bold; margin-bottom: 1rem;">
-            🌟 New!
-          </div>
-        {{ end }}
 
-        <!-- Title -->
-        <h3 style="margin-top: 0;"><a href="{{ .RelPermalink }}" style="color: #5c3d99; text-decoration: none; font-size: 1.5rem;">{{ .Title }}</a></h3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NeuroConnect Blog</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <img src="/images/logo.png" alt="NeuroConnect Logo" class="logo">
+        <h1>NeuroConnect Blog</h1>
+        <p class="tagline">Real talk. Lived experience. Shared support.</p>
+        <nav class="nav">
+            <a href="/">Home</a>
+            <a href="/mystory/">My Story</a>
+            <a href="/courses/">Training</a>
+            <a href="/chatbot/">Chatbot</a>
+            <a href="/contact/">Contact</a>
+        </nav>
+    </header>
 
-        <!-- Date -->
-        <p style="color: #777; font-size: 0.9rem; margin: 0.5rem 0 1.5rem;">🗓️ {{ .Date.Format "January 2, 2006" }}</p>
+    <main class="main">
+        <h2>📝 Latest Blog Posts</h2>
+        <ul>
+            {{ range .Pages }}
+            <li>
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a> — {{ .Date.Format "Jan 2, 2006" }}
+            </li>
+            {{ end }}
+        </ul>
+    </main>
 
-        <!-- Summary -->
-        <p style="color: #444; line-height: 1.6;">{{ .Summary }}</p>
-
-        <!-- Read More Button -->
-        <div style="margin-top: 1.5rem;">
-          <a href="{{ .RelPermalink }}" style="display: inline-block; padding: 0.6rem 1.2rem; background-color: #5c3d99; color: #fff; border-radius: 8px; text-decoration: none; font-weight: bold; transition: background-color 0.3s;">Read More →</a>
-        </div>
-      </div>
-    {{ end }}
-  </div>
-</section>
-
-<!-- Hover effect -->
-<style>
-  div[style*="background: #fff;"] a:hover {
-    background-color: #7a5eb1;
-  }
-  div[style*="background: #fff;"]:hover {
-    transform: translateY(-5px);
-  }
-</style>
-{{ end }}
+    <footer class="footer">
+        <p>&copy; 2025 NeuroConnect</p>
+    </footer>
+</body>
+</html>
