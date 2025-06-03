@@ -1,38 +1,51 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>NeuroConnect Blog</title>
-    <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+  <title>{{ .Title }} | NeuroConnect</title>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <header class="header">
-        <img src="/images/logo.png" alt="NeuroConnect Logo" class="logo">
-        <h1>NeuroConnect Blog</h1>
-        <p class="tagline">Real talk. Lived experience. Shared support.</p>
-        <nav class="nav">
-            <a href="/">Home</a>
-            <a href="/mystory/">My Story</a>
-            <a href="/courses/">Training</a>
-            <a href="/chatbot/">Chatbot</a>
-            <a href="/contact/">Contact</a>
-        </nav>
-    </header>
 
-    <main class="main">
-        <h2>📝 Latest Blog Posts</h2>
-        <ul>
-            {{ range .Pages }}
-            <li>
-                <a href="{{ .RelPermalink }}">{{ .Title }}</a> — {{ .Date.Format "Jan 2, 2006" }}
-            </li>
+  <!-- Header -->
+  <header class="header">
+    <img src="/images/logo.png" alt="NeuroConnect Logo" class="logo">
+    <h1>{{ .Site.Title }}</h1>
+    <p class="tagline">Real talk. Lived experience. Shared support.</p>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="/my-story/">My Story</a>
+      <a href="/training/">Training</a>
+      <a href="/chatbot/">Chatbot</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main content -->
+  <main class="main">
+    <section class="hero">
+      <h2>📝 Latest Blog Posts</h2>
+      <ul>
+        {{ range .Pages }}
+          <li>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a> — {{ .Date.Format "Jan 2, 2006" }}
+            {{ if .Params.summary }}
+              <p>{{ .Params.summary }}</p>
+            {{ else }}
+              <p>{{ .Summary }}</p>
             {{ end }}
-        </ul>
-    </main>
+          </li>
+        {{ end }}
+      </ul>
+    </section>
+  </main>
 
-    <footer class="footer">
-        <p>&copy; 2025 NeuroConnect</p>
-    </footer>
+  <!-- Footer -->
+  <footer>
+    <p>© {{ now.Format "2006" }} NeuroConnect</p>
+  </footer>
+
 </body>
 </html>
