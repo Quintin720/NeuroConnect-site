@@ -1,40 +1,65 @@
-.intro {
-    background: #f9f9ff;
-    padding: 2rem;
-    border-radius: 20px;
+.back-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 10px 20px;
+    background: gold;
+    color: #333;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-button:hover {
+    background: #ffd700;
+}
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+    color: #333;
+}
+
+header {
     text-align: center;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 2rem 1rem;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
+    color: #333;
+    border-bottom: 4px solid gold;
 }
 
-.post-card {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 20px;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+header img {
+    max-width: 100px;
 }
 
-.post-card h3 a {
+h1, h2, h3 {
+    font-weight: bold;
+    color: #333;
+}
+
+a {
     color: #5c3d99;
     text-decoration: none;
 }
 
-.post-card p {
-    margin-top: 1rem;
-    line-height: 1.6;
-    color: #333;
-}
-
-.read-more {
-    display: inline-block;
-    margin-top: 1rem;
-    color: gold;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.read-more:hover {
+a:hover {
     text-decoration: underline;
 }
 
+main {
+    padding: 2rem;
+}
+
+section {
+    background: #f9f9ff;
+    padding: 1.5rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.8rem;
+    color: #999;
+}
