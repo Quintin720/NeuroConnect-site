@@ -1,44 +1,49 @@
-/* Centering blog content */
-.blog-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fffdf7;
+  text-align: center;
 }
 
-.blog-list {
-    background-color: #f0f8ff;
-    padding: 30px;
-    margin: 40px auto;
-    border-radius: 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    width: 80%;
+.container {
+  width: 80%;
+  margin: 0 auto;
 }
 
-.blog-list ul {
-    list-style-type: none;
-    padding: 0;
+.header {
+  background: linear-gradient(to right, #ffcccc, #ffffcc, #ccffcc, #cce5ff, #e5ccff);
+  padding: 20px;
+  border-bottom: 5px solid #ffcc00;
 }
 
-.blog-list li {
-    margin: 20px 0;
-    text-align: left; /* Keep posts left-aligned inside the centered box */
+.logo {
+  max-width: 200px;
 }
 
-/* Navbar updates */
 .nav {
-    text-align: center;
-    padding: 20px 0;
+  margin-top: 20px;
 }
 
 .nav a {
-    margin: 0 20px;
-    text-decoration: none;
-    color: #5a4fcf;
-    font-weight: bold;
+  margin: 0 15px;
+  text-decoration: none;
+  color: #5a3d9a;
+  font-weight: bold;
 }
 
-.nav a:hover {
-    text-decoration: underline;
+.content-box {
+  background-color: #eaf6ff;
+  border-left: 6px solid #c4a1ff;
+  padding: 30px;
+  margin: 40px auto;
+  width: 80%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  text-align: left;
+}
+
+footer {
+  margin: 50px 0 20px;
 }
 

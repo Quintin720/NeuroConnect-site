@@ -1,15 +1,41 @@
-{{ define "main" }}
-<div class="blog-content">
-    <h1>Latest Blog Posts</h1>
-    <div class="blog-list">
-        <ul>
-            {{ range .Pages }}
-            <li>
-                <a href="{{ .Permalink }}">{{ .Title }}</a> — {{ .Date.Format "Jan 2, 2006" }}
-                <p>{{ .Params.summary }}</p>
-            </li>
-            {{ end }}
-        </ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NeuroConnect Blog</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="/images/logo.png" alt="NeuroConnect Logo" class="logo">
+      <h1>NeuroConnect Blog</h1>
+      <p>Real talk. Lived experience. Shared support.</p>
+      <nav class="nav">
+        <a href="https://neuroconnect.ie/index.html">Home</a>
+        <a href="https://neuroconnect.ie/mystory.html">My Story</a>
+        <a href="https://neuroconnect.ie/resources.html">Resources</a>
+        <a href="https://blog.neuroconnect.ie/">Blog</a>
+        <a href="https://neuroconnect.ie/contact.html">Contact</a>
+      </nav>
     </div>
-</div>
-{{ end }}
+
+    <div class="content-box">
+      <h2>📓 Latest Blog Posts</h2>
+      <ul>
+        {{ range .Pages.ByDate.Reverse }}
+          <li>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <small>— {{ .Date.Format "Jan 2, 2006" }}</small>
+            <p>{{ .Summary }}</p>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+
+    <footer>
+      <p>© 2025 NeuroConnect</p>
+    </footer>
+  </div>
+</body>
+</html>
