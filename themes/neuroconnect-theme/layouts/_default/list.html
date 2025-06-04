@@ -1,11 +1,10 @@
 {{ define "main" }}
-<div class="content-box">
+<div class="hero">
   <h2>📚 Latest Blog Posts</h2>
   <ul>
     {{ range .Pages }}
       <li>
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a> — {{ .Date.Format "Jan 2, 2025" }}
-        <p>{{ .Params.summary }}</p>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a> — {{ .Date.Format "Jan 2, 2006" }}
       </li>
     {{ end }}
   </ul>

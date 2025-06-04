@@ -1,9 +1,7 @@
 {{ define "main" }}
-<div class="content-box">
-  <h2>{{ .Title }}</h2>
-  <p class="date">Published: {{ .Date.Format "02-01-2006" }}</p>
-  <div class="post-content">
-    {{ .Content }}
-  </div>
+<div class="hero">
+  <h2>📌 {{ .Title }}</h2>
+  <p><em>Published: {{ .Date.Format "02-01-2006" }}</em></p>
+  {{ .Content }}
 </div>
 {{ end }}
