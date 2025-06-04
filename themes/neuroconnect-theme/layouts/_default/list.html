@@ -1,16 +1,15 @@
 {{ define "main" }}
-<div class="blog-list-container">
-    <h2><span class="icon">📝</span> Latest Blog Posts</h2>
-    <ul>
-        {{ range .Pages }}
-        <li>
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-            <small> — {{ .Date.Format "Jan 2, 2006" }}</small>
-            {{ with .Params.summary }}
-            <p>{{ . }}</p>
+<div class="blog-content">
+    <h1>Latest Blog Posts</h1>
+    <div class="blog-list">
+        <ul>
+            {{ range .Pages }}
+            <li>
+                <a href="{{ .Permalink }}">{{ .Title }}</a> — {{ .Date.Format "Jan 2, 2006" }}
+                <p>{{ .Params.summary }}</p>
+            </li>
             {{ end }}
-        </li>
-        {{ end }}
-    </ul>
+        </ul>
+    </div>
 </div>
 {{ end }}

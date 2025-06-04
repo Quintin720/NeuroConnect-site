@@ -1,7 +1,10 @@
+
 {{ define "main" }}
-<article class="blog-post">
-    <h2><span class="icon">📌</span> {{ .Title }}</h2>
-    <p class="post-date"><em>Published:</em> {{ .Date.Format "02-01-2006" }}</p>
-    {{ .Content }}
-</article>
+<div class="blog-content">
+    <h1>{{ .Title }}</h1>
+    <p><em>Published: {{ .Date.Format "02-01-2006" }}</em></p>
+    <div>
+        {{ .Content }}
+    </div>
+</div>
 {{ end }}
