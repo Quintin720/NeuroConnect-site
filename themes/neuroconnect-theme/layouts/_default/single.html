@@ -1,7 +1,38 @@
-{{ define "main" }}
-<div class="hero">
-  <h2>📌 {{ .Title }}</h2>
-  <p><em>Published: {{ .Date.Format "02-01-2006" }}</em></p>
-  {{ .Content }}
-</div>
-{{ end }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ .Title }}</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <img src="/images/logo.png" alt="NeuroConnect Logo" class="logo">
+  <h1>NeuroConnect Blog</h1>
+  <p class="tagline">Real talk. Lived experience. Shared support.</p>
+
+  <nav class="nav">
+    <a href="https://neuroconnect.ie/index.html">Home</a>
+    <a href="https://neuroconnect.ie/mystory.html">My Story</a>
+    <a href="https://neuroconnect.ie/resources.html">Resources</a>
+    <a href="https://blog.neuroconnect.ie/">Blog</a>
+    <a href="https://neuroconnect.ie/contact.html">Contact</a>
+  </nav>
+</header>
+
+<main class="main">
+  <div class="hero">
+    <h2>{{ .Title }}</h2>
+    <p><em>Published: {{ .Date.Format "02-01-2006" }}</em></p>
+    {{ .Content }}
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2025 NeuroConnect</p>
+</footer>
+
+</body>
+</html>
+
