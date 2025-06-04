@@ -60,16 +60,20 @@ a:hover {
   margin: auto;
 }
 
-.hero,
+/* Light blue box with purple stripe */
+.content-box, 
+.post, 
+.hero, 
 .about {
-  background: #f0f9ff;
+  background: #e6f3ff; /* light blue background */
   padding: 30px;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  border-left: 6px solid #9370DB; /* purple stripe */
   margin-bottom: 40px;
-  border-left: 6px solid #bdb2ff;
 }
 
+/* Headings */
 h1, h2 {
   color: #333;
 }
@@ -90,5 +94,13 @@ h1, h2 {
 .button-primary:hover {
     background-color: #0056b3; /* darker blue on hover */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* soft hover shadow */
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  margin-top: 40px;
 }
 
