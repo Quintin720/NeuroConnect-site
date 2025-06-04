@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>{{ block "title" . }}{{ .Title }} | NeuroConnect Blog{{ end }}</title>
-    <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+  <title>{{ block "title" . }}{{ .Title }} | NeuroConnect Blog{{ end }}</title>
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+  <header class="site-header">
+    <div class="hero">
+      <img src="/logo.png" alt="NeuroConnect Logo" class="logo">
+      <h1>{{ if .IsHome }}Welcome to NeuroConnect{{ else }}{{ .Title }}{{ end }}</h1>
+      <p class="tagline">Real talk. Lived experience. Shared support.</p>
+    </div>
+    <nav class="nav">
+      <a href="https://neuroconnect.ie/index.html">Home</a>
+      <a href="https://neuroconnect.ie/mystory.html">My Story</a>
+      <a href="https://neuroconnect.ie/resources.html">Resources</a>
+      <a href="https://blog.neuroconnect.ie/">Blog</a>
+      <a href="https://neuroconnect.ie/contact.html">Contact</a>
+    </nav>
+  </header>
 
-    <header class="header">
-        <img src="/images/logo.png" alt="NeuroConnect Logo" class="logo">
-        <h1 class="site-title">NeuroConnect Blog</h1>
-        <p class="site-tagline">Real talk. Lived experience. Shared support.</p>
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
 
-        <nav class="nav">
-            <a href="https://neuroconnect.ie/index.html">Home</a>
-            <a href="https://neuroconnect.ie/mystory.html">My Story</a>
-            <a href="https://neuroconnect.ie/resources.html">Resources</a>
-            <a href="https://blog.neuroconnect.ie/">Blog</a>
-            <a href="https://neuroconnect.ie/contact.html">Contact</a>
-        </nav>
-    </header>
-
-    <main class="content">
-        {{ block "main" . }}{{ end }}
-    </main>
-
-    <footer class="footer">
-        <p>&copy; 2025 NeuroConnect</p>
-    </footer>
-
+  <footer>
+    <p>© 2025 NeuroConnect</p>
+  </footer>
 </body>
 </html>
+
