@@ -1,24 +1,16 @@
 body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fffaf0;
+  color: #333;
   margin: 0;
   padding: 0;
-  background: #fffdf7;
+}
+
+header {
+  background: linear-gradient(to right, #ffcccc, #ccffcc, #ccccff);
   text-align: center;
-}
-
-.container {
-  width: 80%;
-  margin: 0 auto;
-}
-
-.header {
-  background: linear-gradient(to right, #ffcccc, #ffffcc, #ccffcc, #cce5ff, #e5ccff);
-  padding: 20px;
-  border-bottom: 5px solid #ffcc00;
-}
-
-.logo {
-  max-width: 200px;
+  padding: 20px 0;
+  border-bottom: 4px solid #ffd700;
 }
 
 .nav {
@@ -26,24 +18,57 @@ body {
 }
 
 .nav a {
-  margin: 0 15px;
+  margin: 0 20px;
   text-decoration: none;
-  color: #5a3d9a;
+  color: #663399;
   font-weight: bold;
 }
 
+.logo {
+  max-height: 100px;
+  margin-bottom: 10px;
+}
+
 .content-box {
-  background-color: #eaf6ff;
-  border-left: 6px solid #c4a1ff;
-  padding: 30px;
+  background-color: #e6f3ff;
+  border-left: 6px solid #9370DB;
+  padding: 40px;
   margin: 40px auto;
   width: 80%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 15px;
-  text-align: left;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(147, 112, 219, 0.2);
+}
+
+h1, h2 {
+  color: #333;
+}
+
+.launch-button {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-weight: bold;
 }
 
 footer {
-  margin: 50px 0 20px;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  margin-top: 40px;
 }
+
+.post {
+  background-color: #e6f3ff;
+  border-left: 6px solid #9370DB;
+  padding: 30px;
+  margin: 40px auto;
+  width: 80%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(147, 112, 219, 0.2);
+}
+
 
