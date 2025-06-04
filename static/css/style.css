@@ -101,6 +101,28 @@ h1, h2 {
   background-color: #0056b3;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
+/* === Profile Photo Styling === */
+.profile-photo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.profile-photo img {
+  width: 200px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* === Content Image Styling === */
+.content-image {
+  width: 100%;
+  max-width: 700px;
+  display: block;
+  margin: 30px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
 
 /* Footer */
 footer {
