@@ -1,43 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>NeuroConnect Blog</title>
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-<body>
-  <header class="header">
-    <img src="/images/logo.png" alt="NeuroConnect Logo" class="logo">
-    <h1>NeuroConnect Blog</h1>
-    <p>Real talk. Lived experience. Shared support.</p>
-
-    <nav class="nav">
-      <a href="https://neuroconnect.ie" {{ if eq .Site.BaseURL "https://neuroconnect.ie/" }}class="active"{{ end }}>Home</a>
-      <a href="https://neuroconnect.ie/my-story">My Story</a>
-      <a href="https://neuroconnect.ie/training">Training</a>
-      <a href="https://neuroconnect.ie/chatbot">Chatbot</a>
-      <a href="https://neuroconnect.ie/contact">Contact</a>
-    </nav>
-  </header>
-
-  <main class="main">
-    <section class="hero">
-      <h2>📝 Latest Blog Posts</h2>
-      <ul>
+{{ define "main" }}
+<div class="blog-list-container">
+    <h2><span class="icon">📝</span> Latest Blog Posts</h2>
+    <ul>
         {{ range .Pages }}
         <li>
-          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          <small> — {{ .Date.Format "Jan 2, 2006" }}</small>
-          <p>{{ .Params.summary }}</p> <!-- Displaying summary -->
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <small> — {{ .Date.Format "Jan 2, 2006" }}</small>
+            {{ with .Params.summary }}
+            <p>{{ . }}</p>
+            {{ end }}
         </li>
         {{ end }}
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    <p>© {{ now.Year }} NeuroConnect</p>
-  </footer>
-</body>
-</html>
-
+    </ul>
+</div>
+{{ end }}
