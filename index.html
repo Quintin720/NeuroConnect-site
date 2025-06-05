@@ -38,13 +38,21 @@
     Launch the NeuroConnect Assistant
 </a>
 
-<!-- Correct Lovable Script Here -->
+<!-- Lovable widget script -->
 <script src="https://cdn.lovable.app/widget.js" data-project-id="53de84ea-aa90-4b78-b1ab-0bcea598ef42"></script>
+
+<!-- Wait for page and Lovable to fully load -->
 <script>
-  document.getElementById('chatButton').addEventListener('click', function(event) {
-    event.preventDefault(); // Prevents link from navigating away
-    Lovable.open(); // Opens the new chatbot!
-  });
+  window.onload = function() {
+    document.getElementById('chatButton').addEventListener('click', function(event) {
+      event.preventDefault();
+      if (typeof Lovable !== 'undefined') {
+        Lovable.open();
+      } else {
+        console.error('Lovable is not loaded yet.');
+      }
+    });
+  };
 </script>
 
 <footer class="footer">
