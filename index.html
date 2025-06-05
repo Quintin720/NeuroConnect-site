@@ -34,10 +34,18 @@
     NeuroConnect partners with organisations that are ready to build and benefit from truly inclusive workplaces. Our work is driven by lived Autistic experience, built on strengths, and powered by neuroaffirmative technology.
 </p>   
     </p>
-    <a href="https://neuroconnect-affirmative-aid.lovable.app/" class="button-primary">
-        Launch the NeuroConnect Assistant
-    </a>
-</section>
+   <a href="#" id="chatButton" class="button-primary">
+    Launch the NeuroConnect Assistant
+</a>
+
+<!-- Place this script at the very bottom, right before </body> -->
+<script src="https://cdn.lovable.dev/widget.js" data-project-id="53de84ea-aa90-4b78-b1ab-0bcea598ef42"></script>
+<script>
+  document.getElementById('chatButton').addEventListener('click', function(event) {
+    event.preventDefault();
+    Lovable.open();
+  });
+</script>
 
   <footer class="footer">
     <p>&copy; 2025 NeuroConnect. All rights reserved.</p>
